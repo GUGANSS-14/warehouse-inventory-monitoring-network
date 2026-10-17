@@ -34,7 +34,9 @@ public class StandaloneWebLauncher {
         SimulationEngine simEngine = new SimulationEngine(topology, routingEngine, firewallEngine, eventRepo);
 
         try {
-            WarehouseWebServer webServer = new WarehouseWebServer(8080, inventoryService, topology, simEngine, eventRepo);
+            int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+
+            WarehouseWebServer webServer = new WarehouseWebServer(port, inventoryService, topology, simEngine, eventRepo);
             webServer.start();
 
             System.out.println("\n>>> SUCCESS: Dashboard is now LIVE at http://localhost:8080 <<<");
