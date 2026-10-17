@@ -122,7 +122,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.wimn.MainApp</mainClass>
+                    <mainClass>com.wimn.StandaloneWebLauncher</mainClass>
                 </configuration>
             </plugin>
         </plugins>
